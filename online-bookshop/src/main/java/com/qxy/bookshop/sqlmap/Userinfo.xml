@@ -2,16 +2,15 @@
 <!DOCTYPE mapper
  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
-<mapper namespace="UserInfo">
+<mapper namespace="com.qxy.bookshop.dao.LoginDao">
          
-         
-         <insert id="insertUserInfo"  parameterType="userInfo"  keyProperty="id">
-             insert into days_user(  
+         <insert id="insertUserInfo"  parameterType="userInfo" >
+             insert into userinfo(  
          id,
          username,
          password) 
          values 
-         (#{id}      
+         (#{id},      
          #{username},
          #{password})
          </insert>

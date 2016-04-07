@@ -9,14 +9,14 @@ import org.springframework.test.context.ContextConfiguration;
 import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
 
 import com.qxy.bookshop.model.UserInfo;
-import com.qxy.bookshop.service.LoginService;
+import com.qxy.bookshop.service.impl.LoginServiceImpl;
 
 @RunWith(SpringJUnit4ClassRunner.class)
-@ContextConfiguration(locations="classpath:com.springApplicationContext.xml") 
+@ContextConfiguration(locations={"classpath:springApplicationContext.xml"})
 public class LoginServiceTest {
 	
 	 @Autowired 
-	private LoginService loginservice;
+	private LoginServiceImpl loginservice;
 	
 	
 	@Test

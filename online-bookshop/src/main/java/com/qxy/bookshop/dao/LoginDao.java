@@ -1,5 +1,7 @@
 package com.qxy.bookshop.dao;
 
+import org.springframework.stereotype.Repository;
+
 import com.qxy.bookshop.model.UserInfo;
 
 public interface LoginDao {

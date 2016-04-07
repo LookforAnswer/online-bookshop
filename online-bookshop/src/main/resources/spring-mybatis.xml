@@ -27,7 +27,7 @@
 		<property name="password" value="${jdbc.password}" />
 	
 		<!-- 连接池最大使用连接数 -->
-		<property name="maxActive" value="${pool.maxPoolSize}" />
+		<property name="maxActive" value="${pool.maxActive}" />
 	   	<!-- 初始化连接大小 -->
 		<property name="initialSize" value="${pool.initialSize}" />
 		<!-- 获取连接最大等待时间 -->
@@ -54,10 +54,10 @@
     <bean id="sqlSessionFactory"
         class="org.mybatis.spring.SqlSessionFactoryBean"
         p:dataSource-ref="dataSource"
-        p:configLocation="classpath:conf/mybatis-config.xml"><!-- configLocation为mybatis属性 mapperLocations为所有mapper-->
+        p:configLocation="classpath:mybatis-config.xml"><!-- configLocation为mybatis属性 mapperLocations为所有mapper-->
         <property name="mapperLocations">
         	<list>
-        		<value>classpath:/com/qxy/bookshop/sqlmap/*.xml</value>
+        		<value>classpath:com/qxy/bookshop/sqlmap/*.xml</value>
         	</list>
         </property>
      </bean>

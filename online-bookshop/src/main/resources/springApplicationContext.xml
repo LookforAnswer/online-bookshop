@@ -11,9 +11,7 @@
     <context:property-placeholder location="classpath:mysql.properties"/>
     
     <!-- 扫描文件（自动将servicec层注入） -->
-    <context:component-scan base-package="com.qxy.bookshop">
-    	<context:exclude-filter expression="org.springframework.stereotype.Controller" type="annotation"/>
-    </context:component-scan>
+    <context:component-scan base-package="com.qxy.bookshop.service" />
     
-    <import resource="spring-mybatis.xml"/>
+    <import resource="classpath:spring-mybatis.xml"/>
 </beans>
