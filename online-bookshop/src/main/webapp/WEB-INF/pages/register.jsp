@@ -9,22 +9,27 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
   <head>
     <base href="<%=basePath%>">
     <link rel="Shortcut Icon" href="images/bookstore-logo.png">
-    <title>登录首页</title>
+    <title>注册首页</title>
 	<meta http-equiv="pragma" content="no-cache">
 	<meta http-equiv="cache-control" content="no-cache">
 	<meta http-equiv="expires" content="0">    
 	<meta http-equiv="keywords" content="keyword1,keyword2,keyword3">
 	<meta http-equiv="description" content="This is my page">
 	
-	<link rel="stylesheet" type="text/css" href="css/login.css"/>
+	<link rel="stylesheet" type="text/css" href="css/register.css"/>
 	<script type="text/javascript">
 	function result(){
-		var name = "${attr.message}";
-		if(name=="failed"){
-			alert("您输入的用户名或密码不正确！");
+		var name = "${attr.result}";
+		if(name=="exist"){
+			alert("您注册的用户名已存在！");
+		}
+		else if(name=="admin"){
+			alert("您不能注册管理员的用户名！");
+		}
+		else if(name=="success"){
+			alert("注册成功！");
 		}
 	}
-	
 	window.onload = function(){
 		result();
 	};	
@@ -32,38 +37,36 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
   </head>
   
   <body>
+    <div class="header">
+    	<div class="header-logo">
+    		<img alt="" src="images/bookstore-logo.png"/>
+    	</div>
+    </div>
     <div class="body">
-    	<div class="header">
-	    	<div class="header-logo">
-	    		<img alt="" src="images/bookstore-logo.png"/>
-	    	</div>
-	    </div>
 	    <div class="body-bg">
 	    	<img alt="" src="images/login-bg.png"/>
 	    </div>
-    	<div class="body-login-container">
-    		<div class="login-title">
-    			用户登录
+    	<div class="body-register-container">
+    		<div class="register-title">
+    			用户注册
     		</div>
-    		<form action="login-in" method="Post">
-    			<div class="login-username">
+    		<form action="Register.action" method="Post">
+    			<div class="register-username">
     				<span>用户名</span><input type="text" name="username"/>
     			</div>
-    			<div class="login-password">
+    			<div class="register-password">
     				<span>密码</span><input type="password" name="password"/>
     			</div>
-    			<div class="remember-password" >
-    				<input type="checkbox" value="" class="checkbox-remember"/>
-    				<span>记住密码</span></div>
-    			<div class="login-sub">
-    				<input class="login-submit" type="submit" value="登录" />
+    			<div class="register-sub">
+    				<input class="register-submit" type="submit" value="注册" />
     			</div>
     		</form>
-    		<a href="register" class="register">用户注册</a>
+    		<a href="login" class="login">登录</a>
     	</div>
-    	<div class="footer">
-	    	版权所有
-	    </div>
+    </div>
+    
+    <div class="footer">
+    	版权所有
     </div>
   </body>
 </html>

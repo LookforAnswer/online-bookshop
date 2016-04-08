@@ -1,0 +1,30 @@
+@CHARSET "UTF-8";
+body{
+	margin:0px;
+	padding:0px;
+	background:#3e485d;
+}
+.header,
+.body,
+.footer{
+	width:960px;
+	margin:0px auto;
+}
+.header{
+	height:193px;
+	/*background:#0d3c6d;*/
+	position:relative;
+}
+
+.body{
+	height:500px;
+	background:#fff;
+}
+
+.footer{
+	height:100px;
+	background:#fff;
+	position: relative;
+	border-top:dashed 1px #666;	
+}
+

@@ -1,0 +1,77 @@
+@CHARSET "UTF-8";
+/*头部的样式start*/
+
+.header-bg{
+	position:absolute;
+	top:0px;
+	left:0px;
+	z-index:-1;
+	width:100%;
+	height:100%;
+}
+.header-bg img{
+	width:100%;
+}
+.bookstore{
+	position: absolute;
+	left:150px;
+	top:50px;
+}
+.nav{
+	position: absolute;
+	left:0px;
+	bottom:0px;
+}
+.nav ul{
+	margin:0px;
+	padding:0px;
+	line-height:30px;
+}
+.nav ul li{
+	list-style:none;
+	float:left;
+	margin-left:50px;
+}
+.nav ul li a{
+	text-decoration: none;
+	color:#ddd;
+	font-family: "Microsoft YaHei";
+	font-size:14px;
+}
+.nav ul li a:hover{
+	color:#6495ED;
+}
+.user-info{
+	font-size:13px;
+	color:#fff;	
+	position: absolute;
+	right:0px;
+	bottom:0px;
+	line-height:30px;
+}
+.exit{
+	text-decoration: none;
+	color:#ddd;
+}
+.exit:hover{
+	text-decoration: underline;
+	color:#6495ED;
+}
+.shopping-car{
+	text-decoration: none;
+	color:#ddd;
+}
+.shopping-car:hover{
+	text-decoration: underline;
+	color:#6495ED;
+}
+.username{
+	font-size:17px;
+}
+.no-login{
+	margin-right:20px;
+}
+.have-login{
+	margin-right:20px;
+}
+/*头部的样式 end*/

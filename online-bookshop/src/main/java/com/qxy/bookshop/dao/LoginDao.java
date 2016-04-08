@@ -1,7 +1,5 @@
 package com.qxy.bookshop.dao;
 
-import org.springframework.stereotype.Repository;
-
 import com.qxy.bookshop.model.UserInfo;
 
 public interface LoginDao {
@@ -29,4 +27,9 @@ public interface LoginDao {
 	 * @return
 	 */
 	public UserInfo queryByEntity(UserInfo entity);
+	
+	/**
+	 * 通过用户名 查询password
+	 */
+	public UserInfo queryByUsername(UserInfo enttiy);
 }

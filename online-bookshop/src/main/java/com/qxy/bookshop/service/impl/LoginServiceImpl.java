@@ -14,8 +14,21 @@ public class LoginServiceImpl implements LoginService{
 	private LoginDao loginDao;
 	
 	
-	public int insertUserInfo(UserInfo entity) {
+	public int insertUserInfo(UserInfo entity){
 		return loginDao.insertUserInfo(entity);
+	}
+
+
+	public boolean login(String username, String password) {
+		UserInfo entity = new UserInfo();
+		entity.setUsername(username);
+		String str1 = loginDao.queryByUsername(entity).getPassword(); 
+		if(str1.trim().equals(password)){
+			return true;
+		}
+		else{
+			return false;
+		}
 	}
 
 }

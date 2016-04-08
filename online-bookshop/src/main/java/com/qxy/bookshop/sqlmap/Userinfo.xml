@@ -4,6 +4,18 @@
 "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="com.qxy.bookshop.dao.LoginDao">
          
+         
+         <!-- 新增 -->
+		<!-- <insert id="insertUserInfo" parameterType="userInfo" >
+			insert into userinfo (ID
+				<isNotEmpty prepend="," property="username"><![CDATA[ username]]></isNotEmpty>
+				<isNotEmpty prepend="," property="password"><![CDATA[ password]]></isNotEmpty>
+			)values (#id#
+				<isNotEmpty prepend="," property="username"><![CDATA[#{username}]]></isNotEmpty>
+				<isNotEmpty prepend="," property="password"><![CDATA[#{password}]]></isNotEmpty>
+			)
+		</insert> -->
+         
          <insert id="insertUserInfo"  parameterType="userInfo" >
              insert into userinfo(  
          id,
@@ -15,8 +27,13 @@
          #{password})
          </insert>
          
-         <select id="queryByEntity">
+         <select id="queryByEntity" parameterType="userInfo"  resultType="userInfo">
+         	select * from userinfo where 1=1 
          	
+         </select>
+         
+          <select id="queryByUsername" parameterType="userInfo"  resultType="userInfo">
+         	select * from userinfo where 1=1 and username=#{username};
          </select>
          
 </mapper>
