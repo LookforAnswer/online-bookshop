@@ -11,5 +11,5 @@ public interface LoginService {
 	
 	public List<LoginInfo> queryLoginInfoByEntity(LoginInfo entity);
 	
-	public boolean login(LoginInfo entity);
+	public boolean login(LoginInfo entity,String username);
 }

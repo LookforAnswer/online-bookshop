@@ -7,6 +7,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.servlet.ModelAndView;
 
+import com.alibaba.druid.util.StringUtils;
 import com.qxy.bookshop.model.LoginInfo;
 import com.qxy.bookshop.service.impl.LoginServiceImpl;
 
@@ -45,13 +46,21 @@ public class LoginController {
 	 * 跳转到首页
 	 */
 	@RequestMapping(value="list",method=RequestMethod.POST)
-	public ModelAndView loginIn(LoginInfo entity){
-		if(loginService.login(entity)){//登陆成功
-			return  new ModelAndView("listBook");
+	public ModelAndView loginIn(LoginInfo entity,String username){
+		if(entity != null && !StringUtils.isEmpty(username)){
+			if(loginService.login(entity,username)){//登录成功
+				return  new ModelAndView("listBook");
+			}
+			else{//用户名和密码不匹配
+				ModelAndView error = new ModelAndView("login");
+				error.addObject("errorMessage","用户名和密码不匹配！");
+				return  error;
+			}
+			
 		}
-		else{//用户名和密码不匹配
+		else{//登录信息不不完整
 			ModelAndView error = new ModelAndView("login");
-			error.addObject("errorMessage","用户名和密码不匹配！");
+			error.addObject("errorMessage","登录信息不不完整！");
 			return  error;
 		}
 	}

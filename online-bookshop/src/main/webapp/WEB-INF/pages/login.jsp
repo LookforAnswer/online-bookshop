@@ -16,17 +16,31 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 		<meta http-equiv="description" content="This is my page">
 		
 		<link rel="stylesheet" type="text/css" href="css/login.css"/>
+		<script type="text/javascript" src="js/jquery.1.12.js"></script>
 		<script type="text/javascript">
 		function result(){
-			var name = "${errorMessage}";
-			if(name){
-				alert(name);
+			var errorMessage = "${errorMessage}";
+			if(errorMessage){
+				$(".error-info").text(errorMessage).css("display","block");
+			}
+			else{
+				$(".error-info").css("display","none");
 			}
 		}
 		
-		window.onload = function(){
+		$(function(){
 			result();
-		};	
+			$(".username").blur(function(){
+				if($(this).text().trim() == ""){
+					$(".error-info").text("用户名不能为空！").css("display","block");
+				}
+			});
+			$(".password").blur(function(){
+				if($(this).text().trim() == ""){
+					$(".error-info").text("密码不能为空！").css("display","block");
+				}
+			});
+		});	
 		</script>
 	</head>
 	<body>
@@ -44,13 +58,13 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 		    		<div class="login-title">
 		    			用户登录
 		    		</div>
-		    		<div class="error-info"></div>
+		    		<div class="error-info">*用户名和密码不匹配</div>
 		    		<form action="list" method="Post">
 		    			<div class="login-username">
-		    				<span>用户名</span><input type="text" name="username"/>
+		    				<span>用户名</span><input type="text" name="username" class="username"/>
 		    			</div>
 		    			<div class="login-password">
-		    				<span>密码</span><input type="password" name="password"/>
+		    				<span>密码</span><input type="password" name="password" class="password"/>
 		    			</div>
 		    			<div class="remember-password" >
 		    				<input type="checkbox" value="" class="checkbox-remember"/>

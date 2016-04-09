@@ -53,6 +53,16 @@ body{
 	color:#666;
 	font-family: "Microsoft YaHei";
 }
+.error-info{
+	width:171px;
+	height:20px;
+	position:absolute;
+	left:90px;
+	top:78px;
+	color:red;
+	font-size:14px;
+	display: none;
+}
 .login-title{
 	font-size:16px;
 	font-weight:500;
