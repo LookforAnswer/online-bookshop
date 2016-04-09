@@ -1,9 +1,15 @@
 package com.qxy.bookshop.service;
 
-import com.qxy.bookshop.model.UserInfo;
+import java.util.List;
+
+import com.qxy.bookshop.model.LoginInfo;
 
 public interface LoginService {
-	public int insertUserInfo(UserInfo entity);
+	public int insertLoginInfo(LoginInfo entity);
 	
-	public boolean login(String username,String password);
+	public int updateLoginInfo(LoginInfo entity);
+	
+	public List<LoginInfo> queryLoginInfoByEntity(LoginInfo entity);
+	
+	public boolean login(LoginInfo entity);
 }

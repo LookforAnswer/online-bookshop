@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.qxy.bookshop.dao.LoginDao">
+         
+         
+         <!-- 新增 -->
+         <insert id="insertLoginInfo"  parameterType="loginInfo" >
+			insert into loginInfo(id,
+								  <if test="email != null"> email, </if>      
+			         			  <if test="cellphone != null"> cellphone, </if>
+			         			  <if test="password != null"> password </if>) 
+         	values	(#{id},
+         			 <if test="email != null"> #{email}, </if>      
+         			 <if test="cellphone != null"> #{cellphone}, </if>
+         			 <if test="password != null"> #{password} </if>
+         	)
+         </insert>
+         
+         <update id="updateLoginInfo" parameterType="loginInfo">
+         	update loginInfo
+         	<trim prefix="SET" suffixOverrides=",">
+         		<if test="email != null" >email = #{email},</if>
+         		<if test="cellphone != null" >cellphone = #{cellphone},</if>
+         		<if test="password != null" >password = #{password}</if>
+         	</trim>
+         	where id=#{id}
+         </update>
+         
+         <select id="queryByEntity" parameterType="loginInfo"  resultType="loginInfo">
+         	select * from loginInfo 
+         	<where>
+         		1=1
+         		<if test="id != null">
+         			and id = #{id} 
+         		</if>
+         		<if test="email != null">
+         			and email = #{email} 
+         		</if>
+         		<if test="cellphone != null">
+         			and cellphone = #{cellphone} 
+         		</if>
+         		<if test="password != null">
+         			and password = #{password} 
+         		</if>
+         	</where>  
+         </select>
+         
+</mapper>

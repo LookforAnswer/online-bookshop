@@ -60,7 +60,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
     	<h1 style="margin:0px;padding:0px;">错误！</h1>
     </div>
     <div class="footer">
-    	<jsp:include page="commons/Footer.jsp" flush="true">
+    	<jsp:include page="commons/footer.jsp" flush="true">
 		  <jsp:param name="pageTitle" value="newInstance.com"/>
 		</jsp:include>
     </div>

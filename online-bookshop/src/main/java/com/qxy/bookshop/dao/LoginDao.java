@@ -1,35 +1,33 @@
 package com.qxy.bookshop.dao;
 
-import com.qxy.bookshop.model.UserInfo;
+import java.util.List;
+
+import com.qxy.bookshop.model.LoginInfo;
 
 public interface LoginDao {
 	
 	/**
 	 * 添加新用户
 	 */
-	public int insertUserInfo(UserInfo entity);
+	public int insertLoginInfo(LoginInfo entity);
 	
 	/**
 	 * 删除用户
 	 * @param entity
 	 */
-	public void deleteUserInfo(UserInfo entity);
+	public void deleteLoginInfo(LoginInfo entity);
 	
 	/**
 	 * 修改用户
 	 * @param entity
 	 */
-	public void updateUserInfo(UserInfo entity);
+	public int updateLoginInfo(LoginInfo entity);
 	
 	/**
 	 * 查询用户
 	 * @param entity
 	 * @return
 	 */
-	public UserInfo queryByEntity(UserInfo entity);
+	public List<LoginInfo> queryByEntity(LoginInfo entity);
 	
-	/**
-	 * 通过用户名 查询password
-	 */
-	public UserInfo queryByUsername(UserInfo enttiy);
 }

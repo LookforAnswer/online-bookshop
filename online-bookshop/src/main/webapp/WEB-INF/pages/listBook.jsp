@@ -57,7 +57,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
    		</table>
    	</div>
    	<div class="footer">
-   		<jsp:include page="commons/Footer.jsp" flush="true">
+   		<jsp:include page="commons/footer.jsp" flush="true">
 		  <jsp:param name="pageTitle" value="newInstance.com"/>
 		</jsp:include>
    	</div>

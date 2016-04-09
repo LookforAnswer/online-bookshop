@@ -1,44 +1,74 @@
 @CHARSET "UTF-8";
+
 /*底部的样式  start*/
-.footer{
-	height:100px;
-	background:#fff;
-	position: relative;
-	border-top:dashed 1px #666;	
-}
-.footer-name{
-	margin-top:10px;
-	margin-left:10px;
-}
-.footer-ul{
-	position: absolute;
-	top:10px;
-	right:10px;
-	line-height:15px;
-}
-.footer-ul ul{
+body{
 	margin:0px;
 	padding:0px;
-	line-height:30px;
 }
-.footer-ul ul li{
-	list-style:none;
-	float:left;
-	margin-right:15px;
-	line-height:15px;
+.footer{
+	width:990px;
+	margin:0px auto;
+	border:#ccc 0px solid;
 }
-.footer-ul ul li a{
+.ensure-des{
+	margin-bottom:15px;
+}
+.ensure-des img{
+	width:990px;
+	height:60px;
+	filter:progid:DXImageTransform.Microsoft.Shadow(color=#333,strength=4);/*ie*/
+	-moz-box-shadow: 0 0 20px #ccc;	/*firefox*/
+	-webkit-box-shadow: 0 0 20px #ccc;	/*safari或chrome*/
+	box-shadow: 0 0 10px #ccc;	/*opera或ie9*/
+}
+
+.one,.two,.three,.four{
+	text-align:center;
+	font-family:'SimSun';
+	font-size:12px;
+}
+.one{
+	padding:8px 0 5px 0;
+}
+.one .link{
+	width:50px;
+	height:22px;
+	line-height:22px;
+	text-align:center;
+	padding-right:10px;
+	padding-right:10px;
+	border-right: 1px solid #606060;
+}
+.one a{
 	text-decoration: none;
-	color:#666;
-	font-family: "Microsoft YaHei";
-	font-size:14px;
+	color:#606060;
+	font-size:12px;
+	text-align:center;
 }
-.footer-ul ul li a:hover{
-	color:#6495ED;
+.one a:hover{
+	text-decoration: underline;
 }
-.footer-bg img{
-	width:100%;
-	position: absolute;
-	bottom:0px;
+.one .last{
+	width:50px;
+	height:22px;
+	line-height:22px;
+	text-align:center;
+	padding-right:10px;
+	padding-right:10px;
 }
-/*底部的样式  end*/
+.one:after{
+	content:'';
+	display: block;
+	clear:both;
+}
+
+.two,
+.three{
+	padding:3px 0;
+	text-decoration: none;
+	color:#747474;
+}
+.four {
+	text-align: center;
+	padding:10px 0;
+}
