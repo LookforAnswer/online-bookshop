@@ -1,16 +1,24 @@
 package com.qxy.bookshop.controller;
 
+import java.util.HashMap;
+import java.util.Map;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
-import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.servlet.ModelAndView;
 
 import com.alibaba.druid.util.StringUtils;
 import com.qxy.bookshop.model.LoginInfo;
 import com.qxy.bookshop.service.impl.LoginServiceImpl;
 
+/**
+ * 登陆相关的Controller
+ * @author fing
+ *
+ */
 @Controller
 @RequestMapping("/")
 public class LoginController {
@@ -42,14 +50,16 @@ public class LoginController {
 		return footer;
 	}
 	
+	
+	
 	/*
-	 * 跳转到首页
+	 * 登陆时请求的Controller
 	 */
 	@RequestMapping(value="list",method=RequestMethod.POST)
 	public ModelAndView loginIn(LoginInfo entity,String username){
 		if(entity != null && !StringUtils.isEmpty(username)){
 			if(loginService.login(entity,username)){//登录成功
-				return  new ModelAndView("listBook");
+				return  new ModelAndView("index");
 			}
 			else{//用户名和密码不匹配
 				ModelAndView error = new ModelAndView("login");
@@ -66,12 +76,28 @@ public class LoginController {
 	}
 	
 	/**
-	 * 
+	 * 注册时请求的Controller
 	 */
 	@RequestMapping(value="addUser",method=RequestMethod.POST)
 	public ModelAndView addUser(LoginInfo entity){
 		ModelAndView login = new ModelAndView("login");
+		
 		loginService.insertLoginInfo(entity);
 		return login;
+	}
+	
+	/**
+	 * 
+	 */
+	@RequestMapping(value="isExistEmail",method = RequestMethod.POST)
+	public @ResponseBody String isExistEmail(String email){//
+		String result = "";
+		if(loginService.isExistEmail(email)){
+			result="1";
+		}
+		else{
+			result="0";
+		}
+		return result;
 	}
 }

@@ -1,4 +1,4 @@
-<%@ page language="java" import="java.util.*" pageEncoding="utf-8"%>
+%@ page language="java" import="java.util.*" pageEncoding="utf-8"%>
 <%
 String path = request.getContextPath();
 String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.getServerPort()+path+"/";
@@ -51,7 +51,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
   
   <body>
     <div class="header">
-    	<jsp:include page="commons/Header.jsp" flush="true">
+    	<jsp:include page="commons/header.jsp" flush="true">
 		  <jsp:param name="pageTitle" value="newInstance.com"/>
 		  <jsp:param name="pageSlogan" value=" " />
 		</jsp:include>

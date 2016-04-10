@@ -1,5 +1,5 @@
 @CHARSET "UTF-8";
-body{
+/* body{
 	margin:0px;
 	padding:0px;
 	background:#3e485d;
@@ -12,7 +12,7 @@ body{
 }
 .header{
 	height:193px;
-	/*background:#0d3c6d;*/
+	background:#0d3c6d;
 	position:relative;
 }
 
@@ -26,5 +26,5 @@ body{
 	background:#fff;
 	position: relative;
 	border-top:dashed 1px #666;	
-}
+} */
 

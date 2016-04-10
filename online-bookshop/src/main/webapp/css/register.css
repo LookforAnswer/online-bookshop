@@ -70,6 +70,9 @@ body{
 	padding-left:100px;
 	padding-top:20px;
 }
+.email-err{
+	color:red;
+}
 .field{
 	height:30px;
 	margin:15px 0;

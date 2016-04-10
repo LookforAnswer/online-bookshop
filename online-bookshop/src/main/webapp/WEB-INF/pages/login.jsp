@@ -32,12 +32,12 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 			result();
 			$(".username").blur(function(){
 				if($(this).text().trim() == ""){
-					$(".error-info").text("用户名不能为空！").css("display","block");
+					$(".error-info").text("*用户名不能为空！").css("display","block");
 				}
 			});
 			$(".password").blur(function(){
 				if($(this).text().trim() == ""){
-					$(".error-info").text("密码不能为空！").css("display","block");
+					$(".error-info").text("*密码不能为空！").css("display","block");
 				}
 			});
 		});	
@@ -77,8 +77,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 		    	</div>
 			</div>
 		</div>
-	  	<jsp:include page="commons/footer.jsp" flush="true">
-		  <jsp:param name="pageTitle" value="newInstance.com"/>
-		</jsp:include>
+		<%@ include file="commons/loginfooter.jsp" %>
+	  	<%-- <jsp:include page="commons/loginfooter.jsp" flush="true" /> --%>
 	</body>
 </html>

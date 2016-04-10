@@ -25,6 +25,8 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 			}
 		} */
 		$(function(){
+			
+			//切换注册方式的点击事件
 			$(".main-header div").click(function(){
 				$(".main-header div").removeClass();
 				$(this).addClass("selected");
@@ -36,8 +38,54 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 					$(".cellphone").css('display',"block");
 					$(".email").css("display","none");
 				}
-			});	
+			});
+			
+			//验证邮箱是否被注册
+			$("#email").blur(function(){
+				validateEmailOrCellphone($(this),$(this).val());
+			});
+			
+			//验证手机号码是否被注册
+			$("#cellphone").blur(function(){
+				validateEmailOrCellphone($(this),$(this).val());
+			});
 		});
+		
+		
+		
+		/*
+			obj:代表是手机号码还是邮箱input对象
+			str：代表他们对应的input中的值
+		*/
+		function validateEmailOrCellphone(obj,value){
+			var url,data;
+			if(obj.attr('id') == "email"){
+				url = "<%=basePath %>isExistEmail";
+				data = {email:value};
+			}
+			else if(obj.attr('id') == "cellphone"){
+				url = "<%=basePath %>isCellphone";
+				data = {cellphone:value};
+			}
+			$.ajax({
+				url:url,
+				data:data,
+				type:'post',
+				cache:false,
+				dataType:'json',
+				success:function(data){
+					if(data == '1'){
+						$(".email-err").text("*该邮箱已被注册！");
+					}
+					else{
+						$(".email-err").text("");
+					}
+				},
+				error:function(){
+					console.log("err!!!");
+				}
+			});
+		}
 		</script>
 	</head>
 	<body>
@@ -54,10 +102,10 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 				</div>
 				<form action="addUser" method="POST">
 					<div class="email">
-						<div class="field"><span class="title">邮箱：</span><input  type="text" class="text" name="email"/></div>
+						<div class="field"><span class="title">邮箱：</span><input  type="text" class="text" id="email" name="email"/><span class="email-err"></span></div>
 					</div>
 					<div class="cellphone">
-						<div class="field"><span class="title username">手机号码：</span><input  type="text" class="text" name="cellphone"/></div>
+						<div class="field"><span class="title username">手机号码：</span><input  type="text" class="text" id="cellphone" name="cellphone"/></div>
 					</div>
 					<div class="field"><span class="title">登陆密码：</span><input type="password" class="text" /></div>
 					<div class="field"><span class="title">确认密码：</span><input type="password" class="text" name="password"/></div>
@@ -70,12 +118,12 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 				</form>
 				<div class="main-footer">
 					<span>有好学账号？请</span>
-					<a href="login">登陆</a>
+					<a href="login">登录</a>
 				</div>
 			</div>
 		</div>
-	  	<jsp:include page="commons/footer.jsp" flush="true">
-		  <jsp:param name="pageTitle" value="newInstance.com"/>
-		</jsp:include>
+		<div class="footer">
+			<%@ include file="commons/loginfooter.jsp" %>
+		</div>
 	</body>
 </html>

@@ -22,7 +22,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
   
   <body>
     <div class="header">
-    	<jsp:include page="commons/Header.jsp" flush="true">
+    	<jsp:include page="commons/header.jsp" flush="true">
 		  <jsp:param name="pageTitle" value="newInstance.com"/>
 		  <jsp:param name="pageSlogan" value=" " />
 		</jsp:include>

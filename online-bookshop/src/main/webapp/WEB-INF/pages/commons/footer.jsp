@@ -1,43 +1,60 @@
 <%@ page language="java" import="java.util.*" pageEncoding="utf-8"%>
-<%
-String path = request.getContextPath();
-String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.getServerPort()+path+"/";
-%>
-
-<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
 <html>
   <head>
-    <base href="<%=basePath%>">
     <meta content="footer">
     <link rel="stylesheet" type="text/css" href="css/footer.css"/> 
   </head>
   
   <body>
-  	<div class="footer">
-  		<div class="ensure-des">
-  			<img alt="credit" src="images/footer/footer-credit.png">
+  	<div class="website-map">
+  		<div class="col fist-col">
+  			<div class="col-title">新手入门</div>
+  			<a href="#">账号注册</a>
+  			<a href="#">用户登录</a>
+  			<a href="#">忘记密码</a>
+  			<a href="#">会员积分</a>
+  			<a href="#">会员级别</a>
+  			<a href="#">收藏商品</a>
+  			<a href="#">优惠券使用</a>
   		</div>
-  		<div class="haoxue-info">
-  			<div class="one">
-  				<a href="#"  class="link">关于好学</a>
-  				<a href="#"  class="link">联系好学</a>
-  				<a href="#"  class="link">加入好学</a>
-  				<a href="#"  class="link">合作伙伴</a>
-  				<a href="#"  class="last">联盟合作</a>
-  			</div>
-  			<div class="two">
-  				地址：好学大道好学路6号2楼 邮编:610081 联系客服:400-702-0808
-  			</div>
-  			<div class="three">
-  				Copyright(C) 好学在线电子商务有限公司 2000-2012, All Rights Reserved
-  			</div>
-  			<div class="four">
-  				<a href="javascript:void(0);"><img src="images/footer/sgsxzglj.png" alt=""/></a>
-  				<a href="javascript:void(0);"><img src="images/footer/alarm110.png" alt=""/></a>
-  				<a href="javascript:void(0);"><img src="images/footer/license.png" alt=""/></a>
-  				<a href="javascript:void(0);"><img src="images/footer/alipay.png" alt=""/></a>
-  			</div>
+  		<div class="col">
+  			<div class="col-title">购物指南</div>
+  			<a href="#">购物步骤</a>
+  			<a href="#">搜索商品</a>
+  			<a href="#">商品缺货</a>
+  			<a href="#">订单状态</a>
+  			<a href="#">取消订单</a>
+  			<a href="#">修改订单</a>
+  			<a href="#">礼品卡使用</a>
+  		</div>
+  		<div class="col">
+  			<div class="col-title">配送方式</div>
+  			<a href="#">快递-款到发货</a>
+  			<a href="#">快递-货到付款</a>
+  			<a href="#">EMS-邮政快递</a>
+  			<a href="#">验货与签收</a>
+  			<a href="#">发货时间</a>
+  			<a href="#">到货时间</a>
+  			<a href="#">超时未收到货</a>
+  		</div>
+  		<div class="col">
+  			<div class="col-title">支付方式</div>
+  			<a href="#">货到付款</a>
+  			<a href="#">在线支付</a>
+  			<a href="#">银行转账</a>
+  			<a href="#">邮局汇款</a>
+  			<a href="#">礼品卡支付</a>
+  			<a href="#">账户余额支付</a>
+  			<a href="#">汇款到账时间</a>
+  		</div>
+  		<div class="col">
+  			<div class="col-title">售后服务</div>
+  			<a href="#">退换货政策</a>
+  			<a href="#">退换货流程</a>
+  			<a href="#">退款方式及时间</a>
+  			<a href="#">退换货地址</a>
   		</div>
   	</div>
+		<%@ include file="loginfooter.jsp" %>
   </body>
 </html>

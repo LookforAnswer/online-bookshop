@@ -25,7 +25,7 @@ public class LoginServiceImpl implements LoginService{
 
 	public boolean login(LoginInfo entity,String username) {
 		
-		LoginInfo entityForEmail = new LoginInfo();
+	LoginInfo entityForEmail = new LoginInfo();
 		entityForEmail.setEmail(username);
 		entityForEmail.setPassword(entity.getPassword());
 		
@@ -52,7 +52,39 @@ public class LoginServiceImpl implements LoginService{
 
 
 	public List<LoginInfo> queryLoginInfoByEntity(LoginInfo entity) {
-		return (List<LoginInfo>) loginDao.queryByEntity(entity);
+		return loginDao.queryByEntity(entity);
 	}
+	
+	
+	public boolean isExistEmail(String email) {
+		if(email == null || "".equals(email)){
+			return false;
+		}
+		LoginInfo entity = new LoginInfo();
+		entity.setEmail(email);
+		List<LoginInfo> list = loginDao.queryByEntity(entity);
+		if(list != null && list.size()>0){
+			return true;
+		}
+		else{
+			return false;
+		}
+	}
+
+
+	public boolean isExistCellphone(String cellphone) {
+		LoginInfo entity = new LoginInfo();
+		entity.setCellphone(cellphone);
+		List<LoginInfo> list = loginDao.queryByEntity(entity);
+		if(list != null && list.size()>0){
+			return true;
+		}
+		else{
+			return false;
+		}
+	}
+
+
+	
 
 }
