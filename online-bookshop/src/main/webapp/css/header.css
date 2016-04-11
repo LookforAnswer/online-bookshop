@@ -6,7 +6,7 @@
 	padding:0px;
 }
 .user-info-container{
-	width:100%;
+	min-width:990px;
 	height:27px;
 	box-shadow:0px 5px 5px #ddd;
 }
@@ -59,12 +59,15 @@
 }
 
 /* search这行样式 */
-.search{
+div.search-container{
 	width:990px;
-	height:80px;
+	height:120px;
 	margin:0px auto;
-	padding:10px auto;
+	padding:20px 0px;
 	margin-top:5px;
+}
+div.search{
+	
 }
 .left{
 	height:70px;
@@ -77,26 +80,72 @@
 	vertical-align: middle;
 }
 .middle{
+	height:66px;
+	padding-top:12px;
+	padding-bottom:8px;
 	margin-left:50px;
 	float:left;
+}
+.middle input{
+	width:465px;
+	height:36px;
+	line-height:36px;
+	border:2px solid #0d3c6d;
+	padding:2px;
+	outline: none;
+	vertical-align: top;
+}
+.search-btn{
+	width:80px;
+	height:36px;
+	display:inline-block;
+	text-align:center;
+	line-height:36px;
+	background-color: #0d3c6d;
+	color:#fff;
+	margin-left:-8px;
+	font-family: "Microsoft YaHei";
+}
+.search-title{
+	color:red;
+}
+.hot-search{
+	height:30px;
+	line-height: 30px;
+	font-family: simsun;
+	font-size: 12px;
+}
+.hot-search a{
+	text-decoration: none;
+	color:#666;
+}
+.hot-search a:hover{
+	color:#0d3c6d;
 }
 .right{
 	margin-left:40px;
 	float:left;
 }
-
-.types{
-	min-width:990px;
-	border-bottom:2px solid #0d3c6d;
+.shopping-car{
+	width:80px;
+	height:36px;
+	line-height: 36px;
 }
-.types-content{
+
+
+.list-types{
+	min-width:990px;
+	clear:both;
+	border-bottom:3px solid #0d3c6d;
+}
+.list-types-content{
 	width:990px;
 	height:40px;
 	line-height:40px;
 	margin:0px auto;
 }
-.types-all{
-	width:150px;
+.list-types-all{
+	width:185px;
 	height:40px;
 	padding-left:10px;
 	line-height:40px;
@@ -105,18 +154,18 @@
 	color:#fff;
 	float:left;
 }
-.types-cell{
+.list-types-cell{
 	margin-left:20px;
 	float:left;
 }
-.types-cell a{
+.list-types-cell a{
 	text-decoration:none;
 	font-family:"Microsoft YaHei";
 	color:#666;
 	padding:0px 20px;;
 	text-align: center;
 }
-.types-cell a:hover{
+.list-types-cell a:hover{
 	color:#0d3c6d;
 }
 /*头部的样式 end*/
