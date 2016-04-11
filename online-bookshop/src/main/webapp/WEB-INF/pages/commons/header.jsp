@@ -4,36 +4,11 @@
 	<meta  content="heaer" />
 	<!-- <link rel="Shortcut Icon" href="images/bookstore-logo-small.png"> -->   
 	<link rel="stylesheet" type="text/css" href="css/header.css"/>
-	<link rel="stylesheet" type="text/css" href="font-framework/bootstrap-3.3.5-dist/css/bootstrap.css"/>
-	<link rel="stylesheet" type="text/css" href="font-framework/bootstrap-3.3.5-dist/css/bootstrap.min.css"/>
-	<script type="text/javascript" src="js/jquery.1.12.js"></script> 
-	<script type="text/javascript">
-		$(function(){
-			$("#")
-		});
-	</script>
   </head>
   <body>
-  	<div class="user-info-container">
-  		<div class="user-info">
-  			<div class="before">
-  				<!-- <span><img alt="star" src="images/header/star.png"></span> --><i class="glyphicon glyphicon-star" style="color:orange;"></i><span class="store-up">收藏好学</span>
-  			</div>
-  			<div class="after">
-  				<span>欢迎光临好学网，请</span>
-  				[<a href="login">登录</a>]
-  				[<a href="register">免费注册</a>]
-  				<span class="cutline">|</span>
-  				<a href="#">我的订单</a>
-  				<span class="cutline">|</span>
-  				<a href="#">我的好学</a>
-  				<span class="cutline">|</span>
-  				<a href="#">帮助中心</a>
-  				<span class="cutline">|</span>
-  				<a href="#">客户服务</a>
-  			</div>
-  		</div>
-  	</div>
+  	<div class="header">
+  		<jsp:include page="common-header.jsp" flush="true" /> 
+	</div>
   	<div class="search-container">
   		<div class="left"><img alt="" src="images/bookstore-logo.png"></div>
   		<div class="middle">

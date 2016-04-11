@@ -31,51 +31,39 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 				$(".main-header div").removeClass();
 				$(this).addClass("selected");
 				if($(this).text() == "邮箱账号注册"){//邮箱注册
+					$(".username-title").text("邮箱：");
 					$(".email").css("display","block");
 					$(".cellphone").css("display","none");
 				}
 				else{//手机号码注册
+					$(".username-title").text("手机号码：");
 					$(".cellphone").css('display',"block");
 					$(".email").css("display","none");
 				}
 			});
 			
-			//验证邮箱是否被注册
-			$("#email").blur(function(){
-				validateEmailOrCellphone($(this),$(this).val());
-			});
-			
-			//验证手机号码是否被注册
-			$("#cellphone").blur(function(){
-				validateEmailOrCellphone($(this),$(this).val());
+			//验证用户名是否被注册
+			$("#username").blur(function(){
+				validateEmailOrCellphone($(this).val());
 			});
 		});
-		
-		
 		
 		/*
 			obj:代表是手机号码还是邮箱input对象
 			str：代表他们对应的input中的值
 		*/
 		function validateEmailOrCellphone(obj,value){
-			var url,data;
-			if(obj.attr('id') == "email"){
-				url = "<%=basePath %>isExistEmail";
-				data = {email:value};
-			}
-			else if(obj.attr('id') == "cellphone"){
-				url = "<%=basePath %>isCellphone";
-				data = {cellphone:value};
-			}
 			$.ajax({
-				url:url,
-				data:data,
+				url:"isExistUsername",
+				data:{
+					username:value
+				},
 				type:'post',
 				cache:false,
 				dataType:'json',
 				success:function(data){
 					if(data == '1'){
-						$(".email-err").text("*该邮箱已被注册！");
+						$(".email-err").text("*该用户名已被注册！");
 					}
 					else{
 						$(".email-err").text("");
@@ -101,12 +89,10 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 					<div class="">手机号码注册</div>
 				</div>
 				<form action="addUser" method="POST">
-					<div class="email">
+					<!-- <div class="email">
 						<div class="field"><span class="title">邮箱：</span><input  type="text" class="text" id="email" name="email"/><span class="email-err"></span></div>
-					</div>
-					<div class="cellphone">
-						<div class="field"><span class="title username">手机号码：</span><input  type="text" class="text" id="cellphone" name="cellphone"/></div>
-					</div>
+					</div> -->
+					<div class="field"><span class="title username-title">邮箱：</span><input  type="text" class="text" id="username" name="username"/></div>
 					<div class="field"><span class="title">登陆密码：</span><input type="password" class="text" /></div>
 					<div class="field"><span class="title">确认密码：</span><input type="password" class="text" name="password"/></div>
 					<div class="cellphone">

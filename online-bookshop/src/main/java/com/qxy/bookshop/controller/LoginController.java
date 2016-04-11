@@ -1,13 +1,13 @@
 package com.qxy.bookshop.controller;
 
-import java.util.HashMap;
-import java.util.Map;
-
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
+import org.springframework.ui.ModelMap;
+import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.ResponseBody;
+import org.springframework.web.bind.annotation.SessionAttributes;
 import org.springframework.web.servlet.ModelAndView;
 
 import com.alibaba.druid.util.StringUtils;
@@ -21,6 +21,7 @@ import com.qxy.bookshop.service.impl.LoginServiceImpl;
  */
 @Controller
 @RequestMapping("/")
+@SessionAttributes("currentUser")
 public class LoginController {
 	
 	@Autowired
@@ -56,10 +57,14 @@ public class LoginController {
 	 * 登陆时请求的Controller
 	 */
 	@RequestMapping(value="list",method=RequestMethod.POST)
-	public ModelAndView loginIn(LoginInfo entity,String username){
-		if(entity != null && !StringUtils.isEmpty(username)){
-			if(loginService.login(entity,username)){//登录成功
-				return  new ModelAndView("index");
+	public ModelAndView loginIn(LoginInfo entity,ModelMap model){
+		if(entity != null){
+			if(loginService.login(entity)){//登录成功
+				LoginInfo currentUser = loginService.queryLoginInfoByEntity(entity).get(0);
+				model.addAttribute("currentUser",currentUser);
+				ModelAndView index = new ModelAndView("index");
+				index.addObject("username",entity.getUsername());
+				return  index;
 			}
 			else{//用户名和密码不匹配
 				ModelAndView error = new ModelAndView("login");
@@ -86,13 +91,19 @@ public class LoginController {
 		return login;
 	}
 	
+	@RequestMapping(value="loginout",method=RequestMethod.GET)
+	public ModelAndView loginout(){
+		return new ModelAndView("login");
+	}
+	
+	
 	/**
 	 * 
 	 */
-	@RequestMapping(value="isExistEmail",method = RequestMethod.POST)
+	@RequestMapping(value="isExistUsername",method = RequestMethod.POST)
 	public @ResponseBody String isExistEmail(String email){//
 		String result = "";
-		if(loginService.isExistEmail(email)){
+		if(loginService.isExistUsername(email)){
 			result="1";
 		}
 		else{

@@ -8,12 +8,10 @@
          <!-- 新增 -->
          <insert id="insertLoginInfo"  parameterType="loginInfo" >
 			insert into loginInfo(id,
-								  <if test="email != null"> email, </if>      
-			         			  <if test="cellphone != null"> cellphone, </if>
+								  <if test="username != null"> username, </if>      
 			         			  <if test="password != null"> password </if>) 
          	values	(#{id},
-         			 <if test="email != null"> #{email}, </if>      
-         			 <if test="cellphone != null"> #{cellphone}, </if>
+         			 <if test="username != null"> #{username}, </if>      
          			 <if test="password != null"> #{password} </if>
          	)
          </insert>
@@ -21,8 +19,7 @@
          <update id="updateLoginInfo" parameterType="loginInfo">
          	update loginInfo
          	<trim prefix="SET" suffixOverrides=",">
-         		<if test="email != null" >email = #{email},</if>
-         		<if test="cellphone != null" >cellphone = #{cellphone},</if>
+         		<if test="username != null" >username = #{username},</if>
          		<if test="password != null" >password = #{password}</if>
          	</trim>
          	where id=#{id}
@@ -35,11 +32,8 @@
          		<if test="id != null">
          			and id = #{id} 
          		</if>
-         		<if test="email != null">
-         			and email = #{email} 
-         		</if>
-         		<if test="cellphone != null">
-         			and cellphone = #{cellphone} 
+         		<if test="username != null">
+         			and username = #{username} 
          		</if>
          		<if test="password != null">
          			and password = #{password} 

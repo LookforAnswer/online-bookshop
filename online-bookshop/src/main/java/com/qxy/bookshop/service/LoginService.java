@@ -16,11 +16,8 @@ public interface LoginService {
 	public List<LoginInfo> queryLoginInfoByEntity(LoginInfo entity);
 	
 	//验证登陆信息
-	public boolean login(LoginInfo entity,String username);
+	public boolean login(LoginInfo entity);
 	
-	//注册时，验证该邮箱是否已被注册
-	public boolean isExistEmail(String email);
-	
-	//注册时，验证该手机号码是否已被注册
-	public boolean isExistCellphone(String Cellphone);
+	//注册时，验证用户名是否已被注册
+	public boolean isExistUsername(String username);
 }

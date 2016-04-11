@@ -29,14 +29,14 @@ public class LoginServiceTest {
 	public void updateLoginInfo(){
 		LoginInfo entity = new LoginInfo();
 		entity.setId("157b5a51475746caa824c2cbc8ac4840");
-		entity.setEmail("1111111");
+		entity.setUsername("1111111");
 		System.out.println(loginservice.updateLoginInfo(entity));
 	}
 	
 	public void addLoginInfo(){
 		LoginInfo entity = new LoginInfo();
 		entity.setId(Util.createId());
-		entity.setEmail("213321");
+		entity.setUsername("213321");
 		entity.setPassword("123456");
 		
 		System.out.println(loginservice.insertLoginInfo(entity));
@@ -45,7 +45,7 @@ public class LoginServiceTest {
 	public void queryLoginInfo(){
 		LoginInfo entity = new LoginInfo();
 		entity.setId("157b5a51475746caa824c2cbc8ac4840");
-		entity.setEmail("1");
+		entity.setUsername("1");
 		System.out.println(loginservice.queryLoginInfoByEntity(entity).size());
 	}
 }
