@@ -7,7 +7,7 @@ body{
 
 .header{
 	width:100%;
-	border-bottom:3px solid #0d3c6d;
+	border-bottom:3px solid #4A5E80;
 }
 .header .content{
 	width:950px;
@@ -62,7 +62,7 @@ body{
 	float:left;
 }
 .main-header .selected{
-	border-bottom:2px solid #0d3c6d;
+	border-bottom:2px solid #4A5E80;
 }
 
 .content form{
@@ -110,7 +110,7 @@ body{
 	line-height:35px;
 	font-size:20px;
 	color:#fff;
-	background-color: #0d3c6d;
+	background-color: #4A5E80;
 	border: none;
 	outline:none;
 	border-radius:5px;
@@ -149,7 +149,7 @@ body{
 	text-decoration: none;
 	font-size:14px;
 	font-weight:600;
-	color:#0d3c6d;
+	color:#4A5E80;
 }
 .main-footer a:hover{
 	text-decoration: underline;

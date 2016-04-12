@@ -13,42 +13,17 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 		<meta http-equiv="cache-control" content="no-cache">
 		<meta http-equiv="expires" content="0">    
 		<meta http-equiv="keywords" content="keyword1,keyword2,keyword3">
-		<meta http-equiv="description" content="This is my page">
+		<meta http-equiv="description" content="登录页面">
 		
 		<link rel="stylesheet" type="text/css" href="css/login.css"/>
 		<link rel="stylesheet" type="text/css" href="font-framework/bootstrap-3.3.5-dist/css/bootstrap.css"/>
-	<link rel="stylesheet" type="text/css" href="font-framework/bootstrap-3.3.5-dist/css/bootstrap.min.css"/>
-		<script type="text/javascript" src="js/jquery.1.12.js"></script>
-		<script type="text/javascript">
-		function result(){
-			var errorMessage = "${errorMessage}";
-			if(errorMessage){
-				$(".error-info").text(errorMessage).css("visibility","visible");
-			}
-			else{
-				$(".error-info").css("visibility","hidden");
-			}
-		}
+		<link rel="stylesheet" type="text/css" href="font-framework/bootstrap-3.3.5-dist/css/bootstrap.min.css"/>
 		
-		$(function(){
-			result();
-			$(".username").blur(function(){
-				if($(this).text().trim() == ""){
-					$(".error-info").text("*用户名不能为空！").css("visibility","visible");
-				}
-			});
-			$(".password").blur(function(){
-				if($(this).text().trim() == ""){
-					$(".error-info").text("*密码不能为空！").css("visibility","visible");
-				}
-			});
-		});	
-		</script>
 	</head>
 	<body>
 		<div class="header">
 			<div class="content">
-				<a href="#"><img alt="" src="images/bookstore-logo.png"></a>
+				<a href=""><img alt="" src="images/bookstore-logo.png"></a>
 			</div>
 		</div>
 		<div class="main">
@@ -75,18 +50,6 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 						      <input type="checkbox">记住密码
 						    </label>
 						</div>
-						<!-- 
-							<div class="login-username">
-			    				<i class="glyphicon glyphicon-user"></i><input type="text" name="username" class="username"/>
-			    			</div>
-			    			<div class="login-password">
-			    				<span>密码</span><input type="password" name="password" class="password"/>
-			    			</div> 
-			    			<div class="remember-password" >
-			    				<input type="checkbox"  class="checkbox-remember" />
-			    				<span>记住密码</span>
-			    			</div>
-		    			-->
 		    			<div class="login-sub">
 		    				<input class="btn btn-default login-sub-btn" type="submit" value="登录">
 		    			</div>
@@ -96,6 +59,31 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 			</div>
 		</div>
 		<%@ include file="commons/loginfooter.jsp" %>
-	  	<%-- <jsp:include page="commons/loginfooter.jsp" flush="true" /> --%>
+	  	<script type="text/javascript" src="js/jquery.1.12.js"></script>
+		<script type="text/javascript">
+		function result(){
+			var errorMessage = "${errorMessage}";
+			if(errorMessage){
+				$(".error-info").text(errorMessage).css("visibility","visible");
+			}
+			else{
+				$(".error-info").css("visibility","hidden");
+			}
+		}
+		
+		$(function(){
+			result();
+			$(".username").blur(function(){
+				if($(this).text().trim() == ""){
+					$(".error-info").text("*用户名不能为空！").css("visibility","visible");
+				}
+			});
+			$(".password").blur(function(){
+				if($(this).text().trim() == ""){
+					$(".error-info").text("*密码不能为空！").css("visibility","visible");
+				}
+			});
+		});	
+		</script>
 	</body>
 </html>

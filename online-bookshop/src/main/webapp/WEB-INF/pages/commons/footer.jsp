@@ -1,7 +1,6 @@
 <%@ page language="java" import="java.util.*" pageEncoding="utf-8"%>
 <html>
   <head>
-    <meta content="footer">
     <link rel="stylesheet" type="text/css" href="css/footer.css"/> 
   </head>
   

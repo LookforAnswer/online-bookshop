@@ -6,7 +6,7 @@ body{
 
 .header{
 	width:100%;
-	border-bottom: 3px solid #0d3c6d;
+	border-bottom: 3px solid #4A5E80;
 }
 .header .content{
 	width:950px;
@@ -96,7 +96,7 @@ body{
 .login-submit{
 	width:230px;
 	line-height:30px;
-	background:#0d3c6d;
+	background:#4A5E80;
 	border:none;
 	border-radius:5px;	
 	margin-top:30px;
@@ -111,7 +111,7 @@ body{
 }
 .login-sub-btn{
 	width:215px;
-	background: #0d3c6d;
+	background: #4A5E80;
 }
 .remember-password{
 	font-size:13px;

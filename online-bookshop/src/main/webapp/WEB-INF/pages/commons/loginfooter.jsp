@@ -1,10 +1,8 @@
 <%@ page language="java" import="java.util.*" pageEncoding="utf-8"%>
 <html>
   <head>
-    <meta content="footer">
     <link rel="stylesheet" type="text/css" href="css/loginfooter.css"/> 
   </head>
-  
   <body>
   	<div class="footer">
   		<div class="ensure-des">
