@@ -9,13 +9,11 @@ import org.springframework.web.servlet.ModelAndView;
 import com.qxy.bookshop.model.LoginInfo;
 
 @Controller
-@RequestMapping("user")
 public class UserInfoController {
 	
-	@RequestMapping("/manage")
+	@RequestMapping("userManage")
 	public ModelAndView userManage(HttpSession session){
 		LoginInfo currentUser = (LoginInfo) session.getAttribute("currentUser");
-		/*System.out.println(currentUser.getPassword());*/
 		ModelAndView userManage = new ModelAndView("userManage");
 		userManage.addObject("username",currentUser.getUsername());
 		return userManage;

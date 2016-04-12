@@ -1,16 +1,17 @@
 package com.qxy.bookshop.controller;
 
+import javax.servlet.http.HttpSession;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.ModelMap;
-import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.bind.annotation.SessionAttributes;
+import org.springframework.web.bind.support.SessionStatus;
 import org.springframework.web.servlet.ModelAndView;
 
-import com.alibaba.druid.util.StringUtils;
 import com.qxy.bookshop.model.LoginInfo;
 import com.qxy.bookshop.service.impl.LoginServiceImpl;
 
@@ -28,9 +29,13 @@ public class LoginController {
 	private LoginServiceImpl loginService;
 	
 	@RequestMapping("")
-	public ModelAndView index(){
-		ModelAndView login = new ModelAndView("index");
-		return login;
+	public ModelAndView index(HttpSession session){
+		ModelAndView index = new ModelAndView("index");
+		LoginInfo currentUser = (LoginInfo) session.getAttribute("currentUser");
+		if(currentUser!= null){
+			index.addObject("username",currentUser.getUsername());
+		}
+		return index;
 	}
 	
 	@RequestMapping("login")
@@ -92,7 +97,12 @@ public class LoginController {
 	}
 	
 	@RequestMapping(value="loginout",method=RequestMethod.GET)
-	public ModelAndView loginout(){
+	public ModelAndView loginout(ModelMap map,SessionStatus sessionStatus){
+		//session.invalidate();
+		LoginInfo currentUser = (LoginInfo) map.get("currentUser");
+		if(currentUser != null){
+			sessionStatus.setComplete();
+		}
 		return new ModelAndView("login");
 	}
 	

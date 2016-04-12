@@ -22,8 +22,13 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
   	<div class="header">
   		<jsp:include page="commons/header.jsp" flush="true" /> 
 	</div>
-   	<div class="body">
-   		
+   	<div class="index">
+   		<div >
+   			
+   		</div>
+   		<div >
+   			
+   		</div>
    	</div>
    	<div class="footer">
 		<jsp:include page="commons/footer.jsp" flush="true" /> 

@@ -38,7 +38,7 @@
 	<script type="text/javascript">
 		var username = "${username}";
 		if(username != "" || username =="[]"){//如果username不为空
-			$(".after-login").html("<a href='user/manage'>"+ username +"</a>");
+			$(".after-login").html("<a href='userManage'>"+ username +"</a>");
 			$(".after-register").html("<a href='loginout'>退出</a>");
 			$(".my-haoxue").attr("href","userManage");
 		}

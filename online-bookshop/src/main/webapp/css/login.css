@@ -9,7 +9,7 @@ body{
 	border-bottom: 3px solid #4A5E80;
 }
 .header .content{
-	width:950px;
+	width:990px;
 	height:70px;
 	margin:5px auto;
 	padding-left:40px;
@@ -19,7 +19,7 @@ body{
 }
 
 .main{
-	width:910px;
+	width:990px;
 	/* height:300px; */
 	margin:0px auto;
 	margin-bottom:25px;

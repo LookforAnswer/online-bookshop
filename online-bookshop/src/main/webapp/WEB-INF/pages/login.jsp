@@ -74,13 +74,19 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 		$(function(){
 			result();
 			$(".username").blur(function(){
-				if($(this).text().trim() == ""){
+				if($(this).val().trim() == ""){
 					$(".error-info").text("*用户名不能为空！").css("visibility","visible");
+				}
+				else{
+					$(".error-info").text("*用户名不能为空！").css("visibility","hidden");
 				}
 			});
 			$(".password").blur(function(){
-				if($(this).text().trim() == ""){
+				if($(this).val().trim() == ""){
 					$(".error-info").text("*密码不能为空！").css("visibility","visible");
+				}
+				else{
+					$(".error-info").text("*密码不能为空！").css("visibility","hidden");
 				}
 			});
 		});	

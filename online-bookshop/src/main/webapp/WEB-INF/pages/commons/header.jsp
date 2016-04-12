@@ -5,7 +5,9 @@
   		<jsp:include page="common-header.jsp" flush="true" /> 
 	</div>
   	<div class="search-container">
-  		<div class="left"><img alt="" src="images/bookstore-logo.png"></div>
+  		<div class="left">
+  			<a href=""><img alt="" src="images/bookstore-logo.png"></a>
+  		</div>
   		<div class="middle">
   			<div >
   				<input type="text" />
@@ -55,7 +57,7 @@
 		});
 		
 		//给所有的a标签添加绝对路径
-		$("a").each(function(){
+		/* $("a").each(function(){
 			if($(this).attr("href")=="undefined"){
 				var url = basePath;
 			}
@@ -63,7 +65,7 @@
 				url = basePath + $(this).attr("href");
 			}
 			$(this).attr("href",url);
-		});
+		}); */
   	</script>
   </body>
 </html>
