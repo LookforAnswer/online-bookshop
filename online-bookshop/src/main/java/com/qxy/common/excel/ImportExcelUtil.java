@@ -39,37 +39,30 @@ public class ImportExcelUtil {
         Cell cell = null;  
           
         list = new ArrayList<List<Object>>();  
-        int listCount = work.getNumberOfSheets();
         //遍历Excel中所有的sheet  
         for (int i = 0; i < work.getNumberOfSheets(); i++) {  
             sheet = work.getSheetAt(i);  
             if(sheet==null){continue;}  
               
             //遍历当前sheet中的所有行
-            
-            /*
-             * 无表头
-             * int start = sheet.getFirstRowNum();
-             * int end = sheet.getLastRowNum();
-            */
-            
-            /*
-             * 有表头
-             */
-            int start = sheet.getFirstRowNum()+1;
-            int end = sheet.getLastRowNum()+1;
-            
-            for (int j = start; j < end; j++) {  
-                row = sheet.getRow(j);  
-                if(row==null||row.getFirstCellNum()==j){continue;}  
-                  
+            for (int j = sheet.getFirstRowNum(); j <= sheet.getLastRowNum(); j++) {  
+                
+            	row = sheet.getRow(j);  
+                if(row==null){continue;}
+                //if(row.getFirstCellNum()==j){continue;};
+                
+                int Count = 0;	//统计 一行中 单元格为空的 数量
+                
                 //遍历所有的列  
                 List<Object> li = new ArrayList<Object>();  
                 for (int y = row.getFirstCellNum(); y < row.getLastCellNum(); y++) {  
                     cell = row.getCell(y);  
                     li.add(this.getCellValue(cell));  
-                }  
-                list.add(li);  
+                } 
+                
+                if( Count >= 0 && Count < row.getPhysicalNumberOfCells()){//如果一行的空格数 刚好等于  总列数，那么这行就是有空字符串组成。
+                	list.add(li);
+                }
             }  
         }  
         //work.close();  
