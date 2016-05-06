@@ -52,7 +52,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
   <div>1.通过简单的form表单提交方式，进行文件的上</br> 2.通过jquery.form.js插件提供的form表单一步提交功能 </div></br>  
     <form method="POST"  enctype="multipart/form-data" id="form1" action="file/uploadImg">  
 		<div>
-			<img alt="图片" id="pic" src="">
+			<img alt="图片" id="pic" src="<%=basePath%>/file/getImg?id=24eb809580b34513aa02d5161ca9222e">
 		</div>
 	    <span>上传图片: </span>  
         <input id="upfile" type="file" name="upImg" onchange="preview()">  
@@ -81,6 +81,8 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
   	 		} 
   	    } ;
   	 	xhr.send();
+  	 	
+  	 	//http://www.debugease.com/javaweb/193847.html,显示多张图片
   	//});
   </script>
 </html>  

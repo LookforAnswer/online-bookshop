@@ -140,23 +140,24 @@ public class UploadFilesController {
     }
     
     @RequestMapping(value="getImg",method={RequestMethod.GET,RequestMethod.POST}) 
-    public  void getImg(String id,HttpServletRequest request,HttpServletResponse response){
+    public void getImg(String id,HttpServletRequest request,HttpServletResponse response){
     	HttpSession seesion = request.getSession();  
     	
     	LoginInfo entity=loginService.queryLoginInfoById(id);
         byte[] data=entity.getImage();  
+        List<LoginInfo> list = loginService.queryLoginInfoByEntity(new LoginInfo());
         response.setContentType("img/jpeg");  
         response.setCharacterEncoding("utf-8");  
         try {  
               
             OutputStream outputStream=response.getOutputStream();  
             InputStream in=new ByteArrayInputStream(data);  
-              
             int len=0;  
             byte[]buf=new byte[1024];  
             while((len=in.read(buf,0,1024))!=-1){  
                 outputStream.write(buf, 0, len);  
             }  
+            in.close();
             outputStream.close();  
         } catch (IOException e) {  
             // TODO Auto-generated catch block  
