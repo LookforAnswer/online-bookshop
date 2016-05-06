@@ -1,34 +1,47 @@
 package com.qxy.bookshop.controller;
 
+import java.io.ByteArrayInputStream;
+import java.io.IOException;
+import java.io.InputStream;
+import java.io.OutputStream;
+import java.io.PrintWriter;
+import java.util.List;
+
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
+
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
-
-import java.io.InputStream;  
-import java.io.PrintWriter;  
-import java.util.List;  
-  
-import javax.servlet.http.HttpServletRequest;  
-import javax.servlet.http.HttpServletResponse;  
-  
-import org.springframework.web.bind.annotation.RequestMethod;  
-import org.springframework.web.bind.annotation.ResponseBody;  
-import org.springframework.web.multipart.MultipartFile;  
+import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.bind.annotation.ResponseBody;
+import org.springframework.web.multipart.MultipartFile;
 import org.springframework.web.multipart.MultipartHttpServletRequest;
 import org.springframework.web.servlet.ModelAndView;
 
 import com.qxy.bookshop.model.LoginInfo;
+import com.qxy.bookshop.service.LoginService;
 import com.qxy.common.excel.ImportExcelUtil;  
   
 
 //教程url:http://blog.csdn.net/onepersontz/article/details/49891405
 @Controller
-@RequestMapping("excel")
-public class UploadExcelController { 
+@RequestMapping("file")
+public class UploadFilesController { 
     
+	@Autowired
+	private LoginService loginService;
 	
 	@RequestMapping(value="/page",method={RequestMethod.GET})
 	public ModelAndView page(){
 		return new ModelAndView("uploadexcel");
+	}
+	
+	@RequestMapping(value="/uploadImg",method={RequestMethod.GET})
+	public ModelAndView uploadImg(){
+		return new ModelAndView("uploadImage");
 	}
 	
     /**  
@@ -106,5 +119,76 @@ public class UploadExcelController {
         out.print("文件导入成功！");  
         out.flush();  
         out.close();  
-    }  
+    }
+    
+    
+    
+    @RequestMapping(value="uploadImg",method={RequestMethod.GET,RequestMethod.POST}) 
+    public  ModelAndView uploadImg(@RequestParam("upImg") MultipartFile file,HttpServletRequest request){
+    	LoginInfo entity = new LoginInfo();
+    	
+    	try{
+    		byte[] b1 = file.getBytes();
+    		entity.setImage(b1);
+    		loginService.insertLoginInfo(entity);
+    	}
+    	catch (IOException e){
+    		e.printStackTrace();
+    	}
+    	
+    	return new ModelAndView("success"); 
+    }
+    
+    @RequestMapping(value="getImg",method={RequestMethod.GET,RequestMethod.POST}) 
+    public  void getImg(String id,HttpServletRequest request,HttpServletResponse response){
+    	HttpSession seesion = request.getSession();  
+    	
+    	LoginInfo entity=loginService.queryLoginInfoById(id);
+        byte[] data=entity.getImage();  
+        response.setContentType("img/jpeg");  
+        response.setCharacterEncoding("utf-8");  
+        try {  
+              
+            OutputStream outputStream=response.getOutputStream();  
+            InputStream in=new ByteArrayInputStream(data);  
+              
+            int len=0;  
+            byte[]buf=new byte[1024];  
+            while((len=in.read(buf,0,1024))!=-1){  
+                outputStream.write(buf, 0, len);  
+            }  
+            outputStream.close();  
+        } catch (IOException e) {  
+            // TODO Auto-generated catch block  
+            e.printStackTrace();  
+        } 
+    }
+    
+    
+    @RequestMapping(value="getImgStream",method={RequestMethod.GET,RequestMethod.POST}) 
+    public  byte[] getImgStream(String id,HttpServletRequest request,HttpServletResponse response){
+    	HttpSession seesion = request.getSession();  
+    	
+    	LoginInfo entity=loginService.queryLoginInfoById(id);
+        byte[] data=entity.getImage();  
+        return data;
+        /*response.setContentType("img/jpeg");  
+        response.setCharacterEncoding("utf-8");  */
+        /*try {  
+              
+            OutputStream outputStream=response.getOutputStream();  
+            InputStream in=new ByteArrayInputStream(data);  
+              
+            int len=0;  
+            byte[]buf=new byte[1024];  
+            while((len=in.read(buf,0,1024))!=-1){  
+                outputStream.write(buf, 0, len);  
+            }  
+            outputStream.close();  
+        } catch (IOException e) {  
+            // TODO Auto-generated catch block  
+            e.printStackTrace();  
+        } */
+    }
+    
 }  

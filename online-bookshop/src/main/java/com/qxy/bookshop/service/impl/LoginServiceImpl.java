@@ -45,6 +45,14 @@ public class LoginServiceImpl implements LoginService{
 		return loginDao.queryByEntity(entity);
 	}
 	
+	public LoginInfo queryLoginInfoById(String id) {
+		LoginInfo entity = new LoginInfo();
+		entity.setId(id);
+		if(loginDao.queryByEntity(entity) == null || loginDao.queryByEntity(entity).size()<=0)
+			return null;
+		return loginDao.queryByEntity(entity).get(0);
+	}
+	
 	
 	public boolean isExistUsername(String username) {
 		if(username == null || "".equals(username)){

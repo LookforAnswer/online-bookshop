@@ -15,6 +15,8 @@ public interface LoginService {
 	//查询登陆信息
 	public List<LoginInfo> queryLoginInfoByEntity(LoginInfo entity);
 	
+	public LoginInfo queryLoginInfoById(String id);
+	
 	//验证登陆信息
 	public boolean login(LoginInfo entity);
 	

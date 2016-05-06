@@ -8,11 +8,13 @@
          <!-- 新增 -->
          <insert id="insertLoginInfo"  parameterType="loginInfo" >
 			insert into loginInfo(id,
-								  <if test="username != null"> username, </if>      
-			         			  <if test="password != null"> password </if>) 
+								  <if test="username != null"> username, </if> 
+			         			  <if test="password != null"> password, </if>
+			         			  image) 
          	values	(#{id},
-         			 <if test="username != null"> #{username}, </if>      
-         			 <if test="password != null"> #{password} </if>
+         			 <if test="username != null"> #{username}, </if> 
+         			 <if test="password != null"> #{password}, </if>
+         			 #{image,jdbcType=BLOB}
          	)
          </insert>
          
@@ -34,6 +36,9 @@
          		</if>
          		<if test="username != null">
          			and username = #{username} 
+         		</if>
+         		<if test="image != null">
+         			and image = #{image} 
          		</if>
          		<if test="password != null">
          			and password = #{password} 

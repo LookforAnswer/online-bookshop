@@ -9,6 +9,7 @@ public class LoginInfo implements Serializable{
 	private String id;
 	private String username;
 	private String password;
+	private byte[] image;
 	
 	
 	public String getId() {
@@ -29,6 +30,12 @@ public class LoginInfo implements Serializable{
 	}
 	public void setPassword(String password) {
 		this.password = password;
+	}
+	public byte[] getImage() {
+		return image;
+	}
+	public void setImage(byte[] image) {
+		this.image = image;
 	}
 	
 }
