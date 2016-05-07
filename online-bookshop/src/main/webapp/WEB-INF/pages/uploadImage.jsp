@@ -66,7 +66,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
   </body>  
   <script type="text/javascript">
   	/* $(function(){ */
-  		url = "<%=basePath%>/file/getImg?id=24eb809580b34513aa02d5161ca9222e";
+  		url = "<%=basePath%>/file/getImg?id=31ee32390613478d857d818eac19a910";
   		var xhr = new XMLHttpRequest();    
   	    xhr.open("get", url, true);
   	    xhr.responseType = "blob";
