@@ -1,0 +1,142 @@
+@CHARSET "UTF-8";
+body{
+	marign:0px;
+	padding:0px;
+}
+
+.header{
+	width:100%;
+	border-bottom: 3px solid #4A5E80;
+}
+.header .content{
+	width:990px;
+	height:70px;
+	margin:5px auto;
+	padding-left:40px;
+}
+.header .content img{
+	height:70px;
+}
+
+.main{
+	width:990px;
+	/* height:300px; */
+	margin:0px auto;
+	margin-bottom:25px;
+	border:#ccc 0px solid;
+	padding:40px;
+	filter:progid:DXImageTransform.Microsoft.Shadow(color=#333,strength=4);/*ie*/
+	-moz-box-shadow: 0 5px 20px #ccc;	/*firefox*/
+	-webkit-box-shadow: 0 5px 20px #ccc;	/*safari或chrome*/
+	box-shadow: 0 2px 10px #ccc;	/*opera或ie9*/
+}
+
+.content{
+	position: relative;
+	left:0px;
+	top:0px;
+}
+.content-bg img{
+	width:100%;
+}
+
+.content-login-container{
+	width:275px;
+	height:317px;
+	position:absolute;
+	top:15px;
+	right:15px;
+	background:#fff;
+	z-index:1;
+	border-radius:5px;
+	padding:30px;
+	color:#666;
+	font-family: "Microsoft YaHei";
+}
+.error-info{
+	width:171px;
+	height:28px;
+	line-height:28px;
+	color:red;
+	font-size:14px;
+	visibility:hidden;
+}
+.login-title{
+	font-size:16px;
+	font-weight:500;
+	line-height:40px;
+	margin-top:-7px;
+	border-bottom:2px solid #ccc;
+}
+.input-group{
+	margin-bottom:20px;
+}
+/* .login-username,
+.login-password,
+.login-sub{
+	width:215px;
+	height:50px;
+	font-size:14px;
+} */
+.login-username input,
+.login-password input{
+	background:transparent;
+	border:none;
+	outline:none;
+}
+/* .login-username span,
+.login-password span{
+	width:50px;
+	line-height:50px;
+	display:inline-block;
+	text-align:right;
+	font-weight:bold;
+	margin-right:10px;
+} */
+.login-submit{
+	width:230px;
+	line-height:30px;
+	background:#4A5E80;
+	border:none;
+	border-radius:5px;	
+	margin-top:30px;
+	margin-left:5px;
+	cursor:pointer;
+	font-size:14px;
+	text-align:center;
+	font-family: "Microsoft YaHei";
+	color:#fff;
+	letter-spacing:2em;
+	padding-left:50px;
+}
+.login-sub-btn{
+	width:215px;
+	background: #4A5E80;
+}
+.remember-password{
+	font-size:13px;
+	line-height:13px;
+	padding-left:18px;
+	margin-top:10px;
+	margin-bottom:10px;
+}
+.checkbox-remember{
+	width:13px;
+	height:13px;
+	margin:0px;
+	padding:0px;
+	margin-top:2px;
+	vertical-align: text-top;
+}
+.remember-password span{
+	font-size:12px;
+}
+.register{
+	display:block;
+	float:right;
+	color:#333;
+	text-decoration: none;
+}
+.register:hover{
+	text-decoration: underline;
+}

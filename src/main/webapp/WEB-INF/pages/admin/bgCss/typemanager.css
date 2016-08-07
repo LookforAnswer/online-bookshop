@@ -1,0 +1,173 @@
+@CHARSET "UTF-8";
+body{
+	width:500px;
+}
+
+/*表格样式*/
+.typelist{
+	width:500px;	
+}
+.typelist table{
+	font-family: "Microsoft YaHei";
+	margin-top:20px;
+}
+.typelist table tr th{
+	background:#3e485d;
+	color:#eee;
+	font-size:14px;
+}
+.typelist table tr td{
+	color:#333;
+	font-size:14px;
+	text-align:center;
+	/*border:1px solid #3e485d;*/
+}
+.typelist table tr td a{
+	display:block;
+	color:#333;
+	text-decoration: none;
+}
+.typelist table tr td a:hover{
+	color:#6495ED;
+}
+
+
+/*添加对话框的样式 start*/
+.add-dialog{
+	width:350px;
+	height:270px;
+	position:absolute;
+	left:50%;
+	margin-left:-175px;
+	top:100px;
+	border:2px solid #3e485d;
+	background:#fff;
+	font-family: "Microsoft YaHei";
+	display:none;
+}
+.add-dialog .dialog-title{
+	line-height:30px;
+	text-align:center;
+	font-size:15px;
+	font-weight: bold;
+	background: #3e485d;
+	color:#eee;
+	letter-spacing:0.5em;
+}
+.add-dialog .form-content{
+	margin-top:48px;
+}
+.add-dialog .form-content span{
+	width:115px;
+	text-align:right;
+	margin-right:5px;
+	display:inline-block;
+}
+.add-dialog .form-buttons{
+	margin-top:55px;
+}
+.add-dialog .form-buttons:after{
+	height:0px;
+	clear:both;
+}
+.add-dialog .form-buttons input{
+	width:50px;
+	height:30px;
+	letter-spacing:0.5em;
+	color:#eee;
+	cursor:pointer;
+	background:#3e485d;
+	outline:none;
+	font-family: Microsoft YaHei;
+	float:left;
+	margin-left:100px;
+}
+.add-dialog .form-buttons div{
+	width:44px;
+	height:26px;
+	text-align:center;
+	line-height:26px;
+	color:#eee;
+	cursor:pointer;
+	background:#3e485d;
+	outline:none;
+	border:2px solid #ccc;
+	font-size:13px;
+	letter-spacing: 0.5em;
+	padding-left:3px;
+	float:left;
+	margin-left:50px;
+	margin-top:1px;
+}
+
+/*添加对话框的样式 end*/
+.update-dialog{
+	/*display:block;*/
+	width:350px;
+	height:270px;
+	position:absolute;
+	left:50%;
+	margin-left:-175px;
+	top:100px;
+	border:2px solid #3e485d;
+	background:#fff;
+	font-family: "Microsoft YaHei";
+	display:none;
+}
+.update-dialog .dialog-title{
+	line-height:30px;
+	text-align:center;
+	font-size:15px;
+	font-weight: bold;
+	background: #3e485d;
+	color:#eee;
+	letter-spacing:0.5em;
+}
+.update-dialog .form-content{
+	margin-top:30px;
+}
+.update-dialog .form-content span{
+	display:inline-block;
+	width:115px;
+	text-align:right;
+	margin-right:5px;
+}
+.update-dialog .form-buttons{
+	margin-top:55px;
+}
+.update-dialog .form-buttons:after{
+	height:0px;
+	clear:both;
+}
+.update-dialog .form-buttons input{
+	width:50px;
+	height:30px;
+	letter-spacing:0.5em;
+	color:#eee;
+	cursor:pointer;
+	background:#3e485d;
+	outline:none;
+	font-family: Microsoft YaHei;
+	float:left;
+	margin-left:100px;
+}
+.update-dialog .form-buttons div{
+	width:44px;
+	height:26px;
+	text-align:center;
+	line-height:26px;
+	color:#eee;
+	cursor:pointer;
+	background:#3e485d;
+	outline:none;
+	border:2px solid #ccc;
+	font-size:13px;
+	letter-spacing: 0.5em;
+	padding-left:3px;
+	float:left;
+	margin-left:50px;
+	margin-top:1px;
+}
+/*修改对话框 start*/
+
+/*修改对话框 end*/

@@ -1,0 +1,157 @@
+@CHARSET "UTF-8";
+body{
+	margin:0px;
+	padding:0px;
+}
+.body,
+.footer{
+	width:800px;
+	margin:0px auto;
+}
+.header{
+	width:800px;
+	height:130px;
+	margin:0px auto;
+	line-height:30px;
+	background:#3e485d;
+	position:relative;
+}
+.header:after{
+	height:0px;
+	clear:both;
+}
+.header-title{
+	padding-top:10px;
+	padding-left:10px;
+	font-family: Microsoft YaHei;
+	color:#eee;
+}
+.header-title:after{
+	height:0px;
+	clear:both;
+}
+.title-big{
+	width:70px;
+	margin-left:10px;
+	float:left;
+}
+.title-small{
+	font-size: 34px;
+	display:inline-block;
+	font-weight:bold;
+	float:left;
+	margin-top:26px;
+	margin-left:10px;
+}
+.header-info{
+	width:100%;
+	height:30px;
+	line-height:30px;
+	position:absolute;
+	bottom:0px;
+	color:#eee;
+	font-family: "Microsoft YaHei";
+	font-size:14px;
+	float:left;
+}
+.user-admin{
+	width:400px;
+	text-align:left;
+	float:left;
+	margin-left:25px;
+}
+.date{
+	width:300px;
+	float:right;
+	text-align: right;
+	margin-right:5px;
+}
+.exit{
+	color:#eee;
+	font-size:12px;
+	text-decoration: none;
+}
+.exit:hover{
+	text-decoration: underline;
+}
+
+.body{
+	height:500px;
+}
+.body:after {
+  height:0;   
+  clear:both;   
+  display:none;   
+  visibility:hidden;   
+}
+.left{
+	width:196px;
+	height:100%;
+	float:left;
+	border-left:2px solid #3e485d;
+	border-right:2px solid #3e485d;
+}
+.left ul{
+	margin:0px;
+	padding:0px;
+}
+.left ul li{
+	list-style:none;
+	line-height:40px;
+	text-align:center;
+	background:#008B8B;
+}
+.left ul li a{
+	display:block;
+	font-family: Microsoft YaHei;
+	color:#eee;
+	border-bottom:1px solid #ccc;
+	text-decoration: none;
+}
+.left ul li a:hover{
+	background:#ccc;
+	cursor:pointer;
+	color:#3e485d;
+}
+.BookManager{
+	display:block;
+}
+.NoticeManager,
+.TypeManager,
+.OrderManager
+{
+	display:none;
+}
+.right{
+	width:598px;
+	height:100%;
+	float:left;
+	border-right:2px solid #3e485d;
+	/*background:green;*/
+	/*overflow:scroll;*/
+}
+.right-title{
+	padding-left:10px;
+	line-height:24px;
+	font-family: Microsoft YaHei;
+	border-bottom:1px dashed #666;
+}
+
+
+
+/*底部的样式*/
+.footer{
+	height:40px;
+	background:#3e485d;
+	padding-top:10px;
+	padding-bottom:8px;
+}
+.footer-one,
+.footer-two
+{
+	line-height:20px;
+	text-align:center;
+	color:#eee;
+	font-size:12px;
+	font-family: Microsoft YaHei;
+}

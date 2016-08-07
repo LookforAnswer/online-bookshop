@@ -1,0 +1,74 @@
+@CHARSET "UTF-8";
+
+/*登陆注册底部的样式  start*/
+body{
+	margin:0px;
+	padding:0px;
+}
+.footer{
+	width:990px;
+	margin:0px auto;
+	border:#ccc 0px solid;
+}
+.ensure-des{
+	margin-bottom:15px;
+}
+.ensure-des img{
+	width:990px;
+	height:60px;
+	filter:progid:DXImageTransform.Microsoft.Shadow(color=#333,strength=4);/*ie*/
+	-moz-box-shadow: 0 0 20px #ccc;	/*firefox*/
+	-webkit-box-shadow: 0 0 20px #ccc;	/*safari或chrome*/
+	box-shadow: 0 0 10px #ccc;	/*opera或ie9*/
+}
+
+.one,.two,.three,.four{
+	text-align:center;
+	font-family:'SimSun';
+	font-size:12px;
+}
+.one{
+	padding:8px 0 5px 0;
+}
+.one .link{
+	width:50px;
+	height:22px;
+	line-height:22px;
+	text-align:center;
+	padding-right:10px;
+	padding-right:10px;
+	border-right: 1px solid #606060;
+}
+.one a{
+	text-decoration: none;
+	color:#606060;
+	font-size:12px;
+	text-align:center;
+}
+.one a:hover{
+	text-decoration: underline;
+}
+.one .last{
+	width:50px;
+	height:22px;
+	line-height:22px;
+	text-align:center;
+	padding-right:10px;
+	padding-right:10px;
+}
+.one:after{
+	content:'';
+	display: block;
+	clear:both;
+}
+
+.two,
+.three{
+	padding:3px 0;
+	text-decoration: none;
+	color:#747474;
+}
+.four {
+	text-align: center;
+	padding:10px 0;
+}

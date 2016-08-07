@@ -1,0 +1,193 @@
+@CHARSET "UTF-8";
+/*头部的样式start*/
+
+
+/****样式重置***/
+*{
+	margin:0px;
+	padding:0px;
+}
+a{
+	text-decoration: none;
+}
+
+/**头部中   用户信息这行  样式**/
+.user-info-container{
+	min-width:990px;
+	height:27px;
+	box-shadow:0px 5px 5px #ddd;
+}
+.user-info{
+	width:990px;
+	height:27px;
+	line-height:27px;
+	margin: 0px auto;
+	font-size:13px;
+	color:#666;
+}
+.user-info:after{
+	content:'';
+	display: block;
+	clear: both;
+}
+.before{
+	height:27px;
+	line-height:27px;
+	float:left;
+}
+.before img{
+	width:14px;
+	padding-top:6px;
+	vertical-align: top;
+}
+..before span{
+	height:27px;
+	line-height: 27px;
+	vertical-align: top;
+}
+.store-up{
+	height:27px;
+	display:inline-block;
+	margin-left:3px;
+}
+.store-up:hover{
+	color:red;
+	cursor:pointer;
+}
+.after{
+	float:right;
+}
+.cutline{
+	margin:0px 5px;
+}
+.after a{
+	color:#666;	
+}
+
+/* 头部中  搜索框这行  样式 */
+div.search-container{
+	width:990px;
+	height:120px;
+	margin:0px auto;
+	padding:20px 0px;
+	margin-top:5px;
+}
+.left{
+	height:70px;
+	padding-top:5px;
+	float:left;
+}
+.left img{
+	height:70px;
+	line-height:70px;
+	vertical-align: middle;
+}
+.middle{
+	height:80px;
+	padding-top:12px;
+	padding-bottom:8px;
+	margin-left:50px;
+	float:left;
+}
+.middle input{
+	width:465px;
+	height:36px;
+	line-height:36px;
+	border:2px solid #4A5E80;
+	padding:2px;
+	outline: none;
+	vertical-align: top;
+}
+.search-btn{
+	width:80px;
+	height:36px;
+	display:inline-block;
+	text-align:center;
+	line-height:36px;
+	background-color: #4A5E80;
+	color:#fff;
+	margin-left:-8px;
+	font-family: "Microsoft YaHei";
+}
+.search-btn:hover{
+	cursor:pointer;
+}
+.search-title{
+	color:red;
+}
+.hot-search{
+	height:30px;
+	line-height: 30px;
+	font-family: simsun;
+	font-size: 12px;
+}
+.hot-search a{
+	color:#666;
+}
+.hot-search a:hover{
+	color:#4A5E80;
+}
+.right{
+	height:80px;
+	margin-left:40px;
+	float:left;
+}
+.shopping-car{
+	width:130px;
+	height:36px;
+	text-align:center;
+	margin-top:12px;
+	margin-left:10px;
+	line-height: 36px;
+	border:1px solid #ccc; 
+}
+.shopping-car a
+{
+	line-hegiht:20px;
+	margin-left:5px;
+	color:#4A5E80;
+	font-size:15px;
+}
+.shopping-car span{
+	line-hegiht:20px;
+	color:#4A5E80;
+	font-size:15px;
+}
+
+
+/** 头部中  图书分类这行   样式**/
+.list-types{
+	min-width:990px;
+	clear:both;
+	border-bottom:3px solid #4A5E80;
+}
+.list-types-content{
+	width:990px;
+	height:40px;
+	line-height:40px;
+	margin:0px auto;
+}
+.list-types-all{
+	width:185px;
+	height:40px;
+	padding-left:10px;
+	line-height:40px;
+	font-family:"Microsoft YaHei";
+	background-color:#4A5E80;
+	color:#fff;
+	float:left;
+}
+.list-types-cell{
+	margin-left:20px;
+	float:left;
+}
+.list-types-cell a{
+	font-family:"Microsoft YaHei";
+	color:#666;
+	padding:0px 20px;;
+	text-align: center;
+}
+.list-types-cell a:hover{
+	color:#4A5E80;
+}
+/*头部的样式 end*/

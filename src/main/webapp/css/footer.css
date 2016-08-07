@@ -1,0 +1,54 @@
+@CHARSET "UTF-8";
+
+/*展示页面通用底部的样式  start*/
+*{
+	margin:0px;
+	padding:0px;
+}
+
+.website-map{
+	width:990px;
+	margin:0px auto;
+	margin-top:20px;
+	padding-bottom:10px;
+	border-bottom:1px solid #ccc;
+	magin-bottom:10px;
+}
+.website-map:after{
+	content:'';
+	display: block;
+	clear: both;
+}
+.website-map .col{
+	width:100px;
+	margin-left:122px;
+	text-align:left;
+	float:left;
+}
+.website-map div.fist-col{
+	margin-left:0px;
+}
+.website-map .col-title{
+	font-family: "Microsot YaHei";
+	font-size:15px;
+	font-weight: bold;
+	color:#4A5E80;
+	border-bottom:1px solid #ccc;
+	padding-bottom:5px;
+	margin-bottom:10px;
+}
+.website-map a{
+	width:100px;
+	height:25px;
+	line-height:25px;
+	display:block;
+	font-family:simsun;
+	font-size:13px;
+	color:#666;
+	text-align:left;
+	text-decoration: none;
+}
+.footer{
+	width:990px;
+	margin: 0px auto;
+}
